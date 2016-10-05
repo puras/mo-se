@@ -3,3 +3,10 @@ target
 
 # Idea
 .idea
+*.iml
+*.ipr
+*.iws
+
+# Gradle
+.gradle
+build

@@ -1,0 +1,18 @@
+server:
+  context-path: /api/v1
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.xa.DruidXADataSource
+    url: jdbc:mysql://localhost:3306/btkey?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+  devtools:
+    restart:
+      exclude: static/**
+#
+#mybatis:
+#  config-location: "classpath:/mybatis-config.xml"
+#  type-aliases-package: com.rnstec.btkey.domain
+#  mapper-locations: ["classpath:/com/rnstec/btkey/persistence/**/*Repository.xml", "classpath:/me/puras/common/persistence/*Mapper.xml"]
