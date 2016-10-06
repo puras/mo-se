@@ -10,6 +10,7 @@ target
 # Gradle
 .gradle
 build
+!/**/frontend/build
 
 # Webpack
 *.hot-update.js
