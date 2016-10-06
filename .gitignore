@@ -10,8 +10,15 @@ target
 # Gradle
 .gradle
 build
-!/**/frontend/build
+
+# Node
+npm-debug.log
 
 # Webpack
 *.hot-update.js
 *.hot-update.json
+
+# Mo-SE
+!src/main/frontend/build
+src/main/resources/static/js/
+src/main/resources/static/lib
