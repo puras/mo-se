@@ -10,3 +10,7 @@ target
 # Gradle
 .gradle
 build
+
+# Webpack
+*.hot-update.js
+*.hot-update.json

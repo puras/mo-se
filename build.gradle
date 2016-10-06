@@ -8,16 +8,21 @@ buildscript {
 
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "com.moowork.gradle:gradle-node-plugin:0.13"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'com.moowork.node'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -63,4 +68,14 @@ task createJavaProject << {
 // 显示当前项目下所有用于compile的Jar
 task listJars(description: 'Display all compile jars.') << {
     configurations.compile.each { File file -> println file.name}
+}
+
+task runWebpackDev(type: NpmTask) << {
+    println 'hello npm'
+    // script = file('./src/main/frontend/build/dev.js')
+    args = ['run', './src/main/frontend/build/dev.js']
+}
+
+task dev(dependsOn: [runWebpackDev]) << {
+    print 'start server...'
 }

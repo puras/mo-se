@@ -1,5 +1,5 @@
 server:
-  context-path: /
+  context-path: /se
 
 spring:
   datasource:
